@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社poralized | AI動画制作・デジタルマーケティング</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/geometries/TextGeometry.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <h1><a href="index.html">poralized<span class="dot">.</span></a></h1> 
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">TOP</a></li>
+                    <li><a href="philosophy.html">PHILOSOPHY</a></li>
+                    <li><a href="service.html">SERVICE</a></li>
+                    <li><a href="company.html">COMPANY</a></li>
+                    <li><a href="contact.html" class="contact-btn">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <canvas id="webgl-canvas"></canvas>
+
+            <div class="hero-container">
+                <span class="hero-sub">PORTAL TO POLARIZATION</span>
+                
+                <h2 class="hero-title js-split-text">
+                    クリエイティブの<br>極地へ。
+                </h2>
+                
+                <p class="hero-lead">
+                    最先端AI技術とデータドリブンな戦略で、<br>
+                    動画制作の常識を覆し、ビジネスに突き抜けた成果を。
+                </p>
+                
+                <div class="hero-cta">
+                    <a href="service.html" class="primary-btn">事業内容を見る</a>
+                    <a href="contact.html" class="secondary-btn">お問い合わせ</a>
+                </div>
+            </div>
+            
+            <div class="scroll-down">
+                <span>SCROLL</span>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <section class="section-padding fade-in-section relative-section">
+            <div class="parallax-bg-wrap">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" alt="bg" class="parallax-img">
+            </div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="en-title">PHILOSOPHY</span>
+                    <h3>突き抜けた成果を</h3>
+                </div>
+                <div class="text-block" style="max-width: 700px;">
+                    <p>
+                        私たちは「平均点」を作りません。<br>
+                        既存の枠組みを超え、AI技術によって突き抜けた成果（Polarized）へアクセスするための入り口（Portal）となる。<br>
+                        それが社名「poralized」に込めた私たちの決意です。
+                    </p>
+                    <a href="philosophy.html" class="view-more-btn">Read Philosophy <span class="arrow">&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding watermark-section">
+            
+            <div class="bg-watermark">SOLUTIONS</div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="en-title">OUR SOLUTIONS</span>
+                    <h3>Total Production</h3>
+                    <p style="color:#ccc; margin-top:15px;">AI動画生成、マーケティング、システム開発。<br>ビジネスを加速させる3つの柱。</p>
+                </div>
+                
+                <div class="production-flow">
+                    <div class="flow-card">
+                        <div class="card-bg-number">01</div>
+                        <div class="card-content">
+                            <h4>AI Video</h4>
+                            <span class="jp-sub">AI動画制作</span>
+                            <p>生成AIを活用した、高品質かつ低コストな動画制作。従来の手法では不可能だった短納期・大量生成を実現します。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-card">
+                        <div class="card-bg-number">02</div>
+                        <div class="card-content">
+                            <h4>Marketing</h4>
+                            <span class="jp-sub">マーケティング支援</span>
+                            <p>動画データを分析し、CVRを最大化する広告運用。クリエイティブの改善サイクルを高速で回し、成果を出し続けます。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-card">
+                        <div class="card-bg-number">03</div>
+                        <div class="card-content">
+                            <h4>System Dev</h4>
+                            <span class="jp-sub">システム開発</span>
+                            <p>動画生成パイプラインの構築や、業務効率を劇的に改善する自動化システムの開発・導入支援。</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <a href="service.html" class="secondary-btn">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding fade-in-section relative-section">
+            <div class="parallax-bg-wrap">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="bg" class="parallax-img">
+            </div>
+
+            <div class="container">
+                <div class="section-header">
+                    <span class="en-title">COMPANY</span>
+                    <h3>会社情報</h3>
+                </div>
+                <div class="text-block" style="max-width: 700px;">
+                    <p>
+                        株式会社poralizedの会社概要、および代表・絹川史也のメッセージをご覧いただけます。<br>
+                        テクノロジーの最前線で、お客様と共に成長し続けるパートナーとして。
+                    </p>
+                    <a href="company.html" class="view-more-btn">View Company <span class="arrow">&rarr;</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-dark fade-in-section" style="text-align: center;">
+            <div class="container">
+                <h3 style="font-size: 2rem; font-weight: 700; color:#fff; margin-bottom: 20px;">Ready to Polarize?</h3>
+                <p style="margin-bottom: 30px; color:#ccc;">ビジネスを加速させる動画制作のご相談はこちらから。</p>
+                <a href="contact.html" class="primary-btn">お問い合わせ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <p class="copyright">&copy; 2025 poralized Inc.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

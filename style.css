@@ -1,0 +1,688 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* ==================================================
+   1. Base Settings
+   ================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: #0b0b0b;
+    color: #f0f0f0;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* 共通コンテナ */
+.container {
+    max-width: 1100px; margin: 0 auto; padding: 0 40px;
+    position: relative; z-index: 2;
+}
+.container.narrow { max-width: 800px; }
+.section-padding { padding: 140px 0; }
+.bg-dark { background-color: #141414; }
+
+/* 見出し */
+.section-header { margin-bottom: 80px; }
+.en-title {
+    display: block; font-family: 'Montserrat', sans-serif; font-weight: 700;
+    color: #3399ff; letter-spacing: 0.15em; font-size: 0.9rem; margin-bottom: 15px;
+}
+.section-header h3 {
+    font-size: 2.8rem; font-weight: 700; color: #fff; line-height: 1.2;
+}
+.page-sub-title {
+    font-size: 1.8rem; margin-bottom: 30px; border-left: 5px solid #3399ff;
+    padding-left: 20px; margin-top: 60px; color: #fff;
+}
+.page-sub-title:first-child { margin-top: 0; }
+
+/* ==================================================
+   2. Header
+   ================================================== */
+header {
+    position: fixed; top: 0; left: 0; width: 100%; height: 80px;
+    background: rgba(11, 11, 11, 0.8); backdrop-filter: blur(12px);
+    z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.header-inner {
+    max-width: 1280px; margin: 0 auto; height: 100%;
+    display: flex; justify-content: space-between; align-items: center; padding: 0 40px;
+}
+header h1 a {
+    font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.6rem; color: #fff;
+}
+.dot { color: #3399ff; }
+
+.nav-list { display: flex; gap: 40px; }
+.nav-list li a {
+    font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.95rem; color: #aaa; position: relative;
+}
+.nav-list li a:hover, .nav-list li a.active { color: #fff; }
+.nav-list li a::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 1px; background: #3399ff; transition: 0.3s;
+}
+.nav-list li a:hover::after { width: 100%; }
+
+.contact-btn {
+    background: #fff; color: #000 !important; padding: 12px 30px; border-radius: 50px; transition: 0.3s;
+}
+.contact-btn:hover { background: #3399ff; color: #fff !important; }
+
+/* ==================================================
+   3. Hero Section (Top Page Only)
+   ================================================== */
+#hero {
+    height: 100vh; width: 100%; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background-color: #0b0b0b;
+}
+
+/* ★追加: 文字を読みやすくする背景マスク */
+#hero::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 30% 50%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 70%);
+    z-index: 2; pointer-events: none;
+}
+
+#webgl-canvas {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; opacity: 0; transition: opacity 2s ease; pointer-events: none;
+}
+#hero .container {
+    width: 100%; max-width: 1280px; height: 100%;
+    position: relative; z-index: 10; pointer-events: none;
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+    text-align: left; padding-left: 5%;
+}
+.hero-sub, .hero-title, .hero-lead, .hero-cta { width: 100%; max-width: 550px; }
+
+.hero-sub {
+    font-family: 'Montserrat', sans-serif; font-weight: 600; color: #3399ff;
+    letter-spacing: 0.3em; margin-bottom: 24px; display: block; opacity: 0;
+}
+.hero-title {
+    font-size: 5rem; line-height: 1.05; font-weight: 700; margin-bottom: 40px;
+    color: #ffffff; text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.hero-title .char { display: inline-block; will-change: transform, opacity; }
+
+.hero-lead { font-size: 1.1rem; color: #ccc; margin-bottom: 50px; opacity: 0; }
+
+.hero-cta { display: flex; gap: 20px; opacity: 0; pointer-events: auto; }
+.primary-btn {
+    background: #3399ff; color: #fff; padding: 18px 45px; border-radius: 50px;
+    font-weight: 700; font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 10px 30px rgba(51, 153, 255, 0.3);
+}
+.primary-btn:hover { background: #fff; color: #000; transform: translateY(-3px); }
+.secondary-btn {
+    border: 1px solid rgba(255,255,255,0.3); color: #fff; padding: 18px 45px; border-radius: 50px;
+    font-weight: 700; font-family: 'Montserrat', sans-serif;
+    background: rgba(0,0,0,0.3); backdrop-filter: blur(5px);
+}
+.secondary-btn:hover { background: #fff; color: #000; transform: translateY(-3px); }
+
+.scroll-down {
+    position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+    z-index: 2; color: #888; font-family: 'Montserrat', sans-serif; font-size: 0.75rem;
+    pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 15px;
+}
+.scroll-down .line { width: 1px; height: 60px; background: linear-gradient(to bottom, #444, #fff); }
+
+/* ==================================================
+   4. Sub Page Header
+   ================================================== */
+.page-header {
+    padding: 240px 0 100px; background-color: #0b0b0b; text-align: center;
+    position: relative; overflow: hidden; z-index: 1;
+}
+.page-header h2 {
+    font-size: 3.5rem; color: #fff; margin-bottom: 10px; font-weight: 700;
+    font-family: 'Montserrat', sans-serif; position: relative; z-index: 2;
+}
+.page-header p { color: #ccc; position: relative; z-index: 2; font-size: 1.1rem; }
+.breadcrumbs {
+    padding: 20px 0; border-bottom: 1px solid #333; color: #666; font-size: 0.9rem;
+    background: #0b0b0b; position: relative; z-index: 2;
+}
+.relative-section { position: relative; overflow: hidden; z-index: 1; }
+.parallax-bg-wrap {
+    position: absolute; top: 0; left: 0; width: 100%; height: 120%;
+    z-index: -1; opacity: 0.15; mix-blend-mode: lighten; pointer-events: none;
+    will-change: transform; transform: translateZ(0);
+}
+.parallax-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ==================================================
+   5. Content Components
+   ================================================== */
+/* Service Features (カード) */
+.service-features { display: flex; justify-content: space-between; gap: 40px; }
+.feature-item {
+    background: linear-gradient(145deg, #1a1a1a, #111);
+    border: 1px solid #333; padding: 50px 35px; border-radius: 8px; width: 32%;
+    transition: 0.4s; position: relative; overflow: hidden;
+}
+.feature-item:hover { transform: translateY(-10px); border-color: #3399ff; }
+.feature-item h4 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #fff; margin-bottom: 20px; }
+.feature-item p { color: #aaa; font-size: 0.95rem; }
+.view-more-btn {
+    display: inline-flex; align-items: center; font-family: 'Montserrat', sans-serif; font-weight: 600;
+    margin-top: 20px; border-bottom: 1px solid #666; color: #aaa;
+}
+.view-more-btn:hover { color: #3399ff; border-color: #3399ff; }
+
+/* ★追加: Technology Detail (ジグザグ配置) */
+.tech-detail {
+    display: flex; align-items: center; justify-content: space-between; gap: 60px; margin-bottom: 120px;
+}
+.tech-detail.reverse { flex-direction: row-reverse; }
+.tech-desc { flex: 1; }
+.tech-desc h4 { font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 700; margin-bottom: 5px; color: #fff; }
+.tech-desc .tech-sub { font-size: 0.9rem; color: #3399ff; margin-bottom: 20px; font-weight: 600; }
+.tech-desc p { color: #ccc; line-height: 1.8; }
+.tech-img-placeholder {
+    flex: 1; border-radius: 8px; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Company */
+.ceo-message { display: flex; gap: 60px; margin-bottom: 0; align-items: flex-start; }
+.ceo-img { width: 45%; flex-shrink: 0; }
+.visual-placeholder {
+    width: 100%; aspect-ratio: 3/4; background: #222; border-radius: 4px; overflow: hidden; position: relative;
+}
+.visual-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.ceo-text { width: 55%; padding-top: 20px; }
+.ceo-text h4 { font-size: 2rem; margin-bottom: 30px; font-weight: 700; color: #fff; }
+.company-dl { border-top: 1px solid #333; margin-top: 40px; }
+.company-dl .row { display: flex; border-bottom: 1px solid #333; padding: 25px 0; align-items: baseline; }
+.company-dl dt { width: 30%; font-weight: 700; color: #fff; font-family: 'Montserrat', sans-serif; }
+.company-dl dd { width: 70%; color: #aaa; }
+
+/* Philosophy */
+.goal-box {
+    border: 1px solid rgba(51, 153, 255, 0.3); padding: 80px 60px; text-align: center;
+    background: radial-gradient(circle at center, rgba(51, 153, 255, 0.05), transparent 70%);
+    position: relative; margin-top: 40px;
+}
+.goal-box::before, .goal-box::after { content: ''; position: absolute; width: 10px; height: 10px; border: 1px solid #3399ff; }
+.goal-box::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.goal-box::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+.goal-main { font-size: 2.5rem; color: #fff; font-weight: 700; margin-bottom: 30px; }
+.goal-desc { color: #ccc; text-align: left; }
+
+/* Contact */
+.form-wrapper {
+    background: #fff; padding: 80px 40px; border-radius: 20px; overflow: hidden;
+    text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+.email-link { font-size: 2rem; font-weight: 700; color: #3399ff; font-family: 'Montserrat', sans-serif; }
+
+/* Footer */
+footer { background: #000; border-top: 1px solid #222; padding: 50px 0; text-align: center; color: #555; font-size: 0.8rem; }
+
+/* ==================================================
+   6. Mobile Responsiveness
+   ================================================== */
+@media (max-width: 768px) {
+    .header-inner { padding: 0 20px; }
+    .nav-list { display: none; }
+    .section-padding { padding: 80px 0; }
+    #hero .container { align-items: center; text-align: center; padding: 0 24px; }
+    .hero-sub, .hero-title, .hero-lead, .hero-cta { max-width: 100%; }
+    .hero-title { font-size: 3.2rem; }
+    .hero-cta { flex-direction: column; width: 100%; gap: 15px; }
+    .primary-btn, .secondary-btn { width: 100%; max-width: 320px; margin: 0 auto; }
+    .service-features, .ceo-message, .tech-detail, .tech-detail.reverse { flex-direction: column; }
+    .feature-item, .ceo-img, .ceo-text, .tech-img-placeholder { width: 100%; }
+    .page-header { padding-top: 150px; }
+    .page-header h2 { font-size: 2.5rem; }
+}
+/* ==================================================
+   Philosophy 3D Area (テキスト下の配置用)
+   ================================================== */
+#vision-3d-container {
+    width: 100%;
+    height: 450px; /* 3Dエリアの高さ。お好みで調整してください */
+    position: relative;
+    margin-top: 60px; /* 上のテキストとの間隔 */
+    overflow: hidden;
+    /* 任意：枠線を付けてエリアをはっきりさせる場合 */
+    /* border: 1px solid #333; border-radius: 8px; */
+}
+
+#vision-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    opacity: 0; /* JSでロード後に表示 */
+    transition: opacity 1s ease;
+}
+/* ==================================================
+   Hero Section 改行・サイズ修正
+   ================================================== */
+
+/* 1. タイトル (The Edge of...) を一行で維持する */
+.hero-title {
+    /* 絶対に改行させない */
+    white-space: nowrap;
+    
+    /* 画面幅に応じてフォントサイズを滑らかに伸縮させる 
+       (最小 2rem 〜 推奨 5.5vw 〜 最大 5rem) */
+    font-size: clamp(2rem, 5.5vw, 5.5rem);
+    
+    width: 100%;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+/* 2. サブコピー・リード文 (単なる生成ではなく...) の改行位置調整 */
+.hero-lead {
+    /* 日本語の単語の途中での不自然な改行を防ぐ */
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    
+    /* 読みやすい最大幅を設定 */
+    max-width: 600px;
+    
+    /* 左揃えか中央揃えか（デザインに合わせて調整してください） */
+    text-align: left; 
+}
+
+/* --- スマホ画面 (768px以下) 用の微調整 --- */
+@media (max-width: 768px) {
+    .hero-title {
+        /* スマホでは文字が小さくなりすぎるのを防ぐため、
+           あえて改行を許可するか、サイズの下限を上げる */
+        font-size: clamp(2.2rem, 8vw, 3.5rem);
+        white-space: normal; /* スマホなら自然な改行を許可 */
+    }
+
+    .hero-lead {
+        /* スマホでは改行ルールを少し緩める */
+        font-size: 0.9rem;
+        word-break: break-all; 
+        text-align: center; /* スマホは中央揃えが見やすい場合が多い */
+        margin: 0 auto 30px auto;
+    }
+}
+/* ==================================================
+   Original Contact Form Styles
+   ================================================== */
+.form-wrapper {
+    width: 100%;
+    max-width: 700px; /* フォームの最大幅 */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03); /* 薄い背景 */
+    padding: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.original-form .form-group {
+    margin-bottom: 24px;
+}
+
+.original-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.original-form .required {
+    color: #3399ff; /* 必須マークの青色 */
+    margin-left: 4px;
+}
+
+/* 入力エリアのデザイン */
+.original-form input,
+.original-form textarea {
+    width: 100%;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    padding: 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    border-radius: 2px;
+    transition: 0.3s ease;
+    outline: none;
+}
+
+/* 入力中（フォーカス時）のデザイン */
+.original-form input:focus,
+.original-form textarea:focus {
+    border-color: #3399ff;
+    box-shadow: 0 0 8px rgba(51, 153, 255, 0.3);
+}
+
+.original-form textarea {
+    resize: vertical; /* 縦方向のみサイズ変更可 */
+}
+
+/* 送信ボタンエリア */
+.form-submit {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* 送信ボタン本体 */
+.submit-btn {
+    display: inline-block;
+    background: #3399ff;
+    color: #fff;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: 0.3s;
+    letter-spacing: 0.05em;
+}
+
+.submit-btn:hover {
+    background: #fff;
+    color: #3399ff;
+    box-shadow: 0 0 20px rgba(51, 153, 255, 0.6);
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .form-wrapper {
+        padding: 20px;
+    }
+    .submit-btn {
+        width: 100%; /* スマホではボタンを幅いっぱいに */
+    }
+}
+/* ==================================================
+   Service Page: Holographic Cards
+   ================================================== */
+.production-flow {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.flow-card {
+    position: relative;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03); /* 極薄の背景 */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 薄い枠線 */
+    padding: 40px 30px;
+    border-radius: 8px;
+    overflow: hidden; /* はみ出した数字を隠す */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    backdrop-filter: blur(5px); /* すりガラス効果 */
+}
+
+/* ホバー時のアクション */
+.flow-card:hover {
+    transform: translateY(-10px); /* 少し浮く */
+    border-color: #3399ff; /* 枠が青くなる */
+    box-shadow: 0 10px 30px rgba(51, 153, 255, 0.15); /* 青い光の影 */
+    background: rgba(51, 153, 255, 0.05);
+}
+
+/* 背景の巨大な数字 */
+.card-bg-number {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    font-size: 8rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.03); /* ほぼ透明 */
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1;
+    z-index: 0;
+    transition: 0.4s;
+}
+
+.flow-card:hover .card-bg-number {
+    color: rgba(51, 153, 255, 0.1); /* ホバー時に数字も少し青く */
+    transform: scale(1.1);
+}
+
+/* カードの中身 */
+.card-content {
+    position: relative;
+    z-index: 1; /* 数字より手前に */
+}
+
+.flow-card h4 {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.05em;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.flow-card .jp-sub {
+    display: block;
+    font-size: 0.9rem;
+    color: #3399ff; /* アクセントカラー */
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.flow-card p {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .production-flow {
+        flex-direction: column; /* 縦並び */
+    }
+    .flow-card {
+        margin-bottom: 20px;
+    }
+}
+/* ==================================================
+   背景透かし文字 (Watermark)
+   ================================================== */
+.watermark-section {
+    position: relative;
+    overflow: hidden; /* はみ出した文字をカット */
+}
+
+.bg-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12vw; /* 画面幅に応じて巨大化 */
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.02); /* 極薄の白 */
+    white-space: nowrap;
+    pointer-events: none; /* マウス操作を邪魔しない */
+    z-index: 0; /* 一番後ろに */
+    user-select: none;
+    line-height: 1;
+}
+
+/* コンテンツが透かし文字の上にくるように調整 */
+.watermark-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* スマホでの微調整 */
+@media (max-width: 768px) {
+    .bg-watermark {
+        font-size: 18vw;
+        transform: translate(-50%, -50%) rotate(-90deg); /* スマホでは縦書き風に回転させてもかっこいい */
+    }
+}
+```css
+/* ==================================================
+   Company Page: 代表メッセージの横並び設定
+   ================================================== */
+
+/* 横並びの枠組み */
+.message-row {
+    display: flex;             /* 横並びにする魔法 */
+    align-items: center;       /* 垂直方向の中心を揃える */
+    justify-content: space-between; /* 左右に程よく間隔を空ける */
+    gap: 60px;                 /* 写真と文字の間の隙間 */
+    margin-top: 40px;
+}
+
+/* 写真エリア */
+.ceo-img-area {
+    flex: 1;                   /* 幅の比率：1 */
+    max-width: 45%;            /* 写真は全体の45%くらいの幅に */
+}
+
+.ceo-img-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;        /* 角を少し丸く */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* カッコいい影 */
+}
+
+/* 文章エリア */
+.ceo-text-area {
+    flex: 1;                   /* 幅の比率：1 */
+}
+
+.ceo-title {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    font-feature-settings: "palt";
+}
+
+.ceo-text-area p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* 署名部分 */
+.ceo-sign {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.ceo-sign .name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 5px;
+}
+
+/* --- スマホ対応 (縦並びに戻す) --- */
+@media (max-width: 768px) {
+    .message-row {
+        flex-direction: column; /* 縦並びにする */
+        gap: 30px;
+    }
+
+    .ceo-img-area {
+        max-width: 100%;       /* スマホでは写真を大きく */
+        margin-bottom: 20px;
+    }
+    
+    .ceo-title {
+        font-size: 1.5rem;
+    }
+}
+/* ==================================================
+   Demo Showcase (Twin Monitors)
+   ================================================== */
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2列均等割り */
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.demo-monitor {
+    position: relative;
+}
+
+/* モニターの枠組み */
+.monitor-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 16:9の比率を固定 */
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(51, 153, 255, 0.3); /* 青い薄い枠 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+/* ホバー時に枠が光る */
+.monitor-frame:hover {
+    border-color: #3399ff;
+    box-shadow: 0 0 30px rgba(51, 153, 255, 0.2);
+}
+
+.monitor-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 枠いっぱいにトリミングして表示 */
+    opacity: 0.9; /* 少し暗くして馴染ませる */
+}
+
+/* 走査線（スキャンライン）エフェクト */
+.monitor-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px; /* 4pxごとの縞模様 */
+    pointer-events: none; /* クリックを邪魔しない */
+    z-index: 2;
+}
+
+/* 動画下のテキスト */
+.monitor-info {
+    margin-top: 15px;
+    padding-left: 10px;
+    border-left: 2px solid #3399ff; /* 左に青い線 */
+}
+
+.monitor-info h4 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.monitor-info p {
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .demo-grid {
+        grid-template-columns: 1fr; /* スマホでは縦並び */
+        gap: 30px;
+    }
+}
