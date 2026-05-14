@@ -4,20 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>経営理念 | 株式会社poralized</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    
-    <script src="script.js" defer></script>
 </head>
 <body>
-
     <header>
         <div class="header-inner">
             <h1><a href="index.html">poralized<span class="dot">.</span></a></h1> 
@@ -34,43 +24,33 @@
     </header>
 
     <main>
-        <section class="page-header relative-section">
+        <section class="page-header">
             <div class="parallax-bg-wrap">
-                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" alt="Philosophy Background" class="parallax-img">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop" alt="philosophy-bg" class="parallax-img">
             </div>
             <div class="container">
                 <h2>PHILOSOPHY</h2>
-                <p>経営理念・ビジョン</p>
-            </div>
-            <div class="breadcrumbs">
-                <div class="container">
-                    <a href="index.html">TOP</a> &gt; <span>PHILOSOPHY</span>
-                </div>
+                <p>経営理念</p>
             </div>
         </section>
+        
+        <div class="breadcrumbs">
+            <div class="container"><a href="index.html">TOP</a> &gt; <span>PHILOSOPHY</span></div>
+        </div>
 
         <section class="section-padding fade-in-section">
             <div class="container narrow">
                 <h3 class="page-sub-title">成果か、無か。</h3>
-                <div class="text-block" style="color: #ccc; line-height: 2;">
-                    <p style="margin-bottom: 24px;">
-                        デジタルとAIの世界において、中途半端な結果に価値はありません。<br>
-                        0か1か。機能するか、しないか。
-                    </p>
-                    <p>
-                        私たちは「平均点」を良しとせず、常に突き抜けた成果（Outlier）を追求します。<br>
-                        リスクを恐れず技術革新に挑み続けることで、お客様のビジネスに不可逆的な成長をもたらすこと。<br>
-                        それが、株式会社poralizedの提供する「両極化（Polarization）」の真意です。
-                    </p>
+                <div class="text-block">
+                    <p>デジタルとAIの世界において、中途半端な結果に価値はありません。<br>
+                    0か1か。機能するか、しないか。</p>
+                    <p>私たちは「平均点」を良しとせず、常に突き抜けた成果（Outlier）を追求します。<br>
+                    リスクを恐れず技術革新に挑み続けることで、お客様のビジネスに不可逆的な成長をもたらすこと。<br>
+                    それが、株式会社poralizedの提供する「両極化（Polarization）」の真意です。</p>
                 </div>
-            </div>
-        </section>
 
-        <section id="philosophy-vision" class="section-padding">
-            <div class="container narrow">
                 <h3 class="page-sub-title">VISION</h3>
-                
-                <div class="goal-box" style="background: rgba(51, 153, 255, 0.05); backdrop-filter: none; border: 1px solid rgba(51, 153, 255, 0.3);">
+                <div class="goal-box">
                     <p class="goal-main">「クリエイティビティの解放」</p>
                     <p class="goal-desc">
                         AIによる自動化技術で、単純作業という「制約」から人々を解放します。<br>
@@ -78,26 +58,17 @@
                         私たちはテクノロジーを通じて、産業構造そのものをアップデートし続けます。
                     </p>
                 </div>
-
-                <div id="vision-3d-container">
-                    <canvas id="vision-canvas"></canvas>
-                </div>
-
             </div>
         </section>
-
-        <section class="section-padding fade-in-section" style="text-align: center;">
-            <div class="container">
-                <h3 style="color: #fff; margin-bottom: 30px;">共創するパートナーをお探しですか？</h3>
-                <a href="contact.html" class="primary-btn">お問い合わせはこちら</a>
-            </div>
-        </section>
-
     </main>
 
     <footer>
-        <div class="container"><p class="copyright">&copy; 2025 poralized Inc.</p></div>
+        <div class="footer-inner"><p class="copyright">&copy; 2025 poralized Inc.</p></div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

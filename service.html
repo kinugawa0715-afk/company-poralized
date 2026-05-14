@@ -4,17 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>事業内容 | 株式会社poralized</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
-    
-    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -33,161 +24,92 @@
     </header>
 
     <main>
-        <section class="page-header relative-section">
+        <section class="page-header">
             <div class="parallax-bg-wrap">
                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="service-bg" class="parallax-img">
             </div>
             <div class="container">
-                <h2>SERVICE</h2>
-                <p>事業内容・技術紹介</p>
-            </div>
-            <div class="breadcrumbs">
-                <div class="container">
-                    <a href="index.html">TOP</a> &gt; <span>SERVICE</span>
-                </div>
+                <h2>SERVICE & TECHNOLOGY</h2>
+                <p>事業内容と独自技術</p>
             </div>
         </section>
 
-        <section class="section-padding watermark-section" style="background: linear-gradient(to bottom, #0b0b0b, #111);">
-            
-            <div class="bg-watermark">PRODUCTION</div>
+        <div class="breadcrumbs">
+            <div class="container"><a href="index.html">TOP</a> &gt; <span>SERVICE</span></div>
+        </div>
 
+        <section class="section-padding fade-in-section">
             <div class="container">
+                <h3 class="page-sub-title">Our Technology</h3>
                 
-                <div class="section-header">
-                    <span class="en-title">TOTAL PRODUCTION</span>
-                    <h3 class="page-sub-title">一気通貫のプロデュース</h3>
-                    <p style="color:#ccc;">企画から生成、そして改善まで。AIテクノロジーを駆使した<br>新しい映像制作のワークフローを提供します。</p>
-                </div>
-
-                <div class="production-flow">
-                    <div class="flow-card">
-                        <div class="card-bg-number">01</div>
-                        <div class="card-content">
-                            <h4>PLANNING</h4>
-                            <span class="jp-sub">企画・設計</span>
-                            <p>
-                                従来の絵コンテ作成時間をAIで90%削減。<br>
-                                クライアントの抽象的なイメージを、<br>
-                                その場で具体的なビジュアル案へと変換します。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flow-card">
-                        <div class="card-bg-number">02</div>
-                        <div class="card-content">
-                            <h4>GENERATION</h4>
-                            <span class="jp-sub">AI生成・制作</span>
-                            <p>
-                                実写撮影を行わず、フルAIによる動画生成。<br>
-                                キャスティングやロケのコストをゼロに。<br>
-                                不可能なカメラワークも実現可能です。
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="flow-card">
-                        <div class="card-bg-number">03</div>
-                        <div class="card-content">
-                            <h4>ANALYSIS</h4>
-                            <span class="jp-sub">分析・改善</span>
-                            <p>
-                                クリエイティブごとの視聴データを分析。<br>
-                                「何が刺さったか」を数値化し、<br>
-                                次の生成へ即座にフィードバックさせます。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="demo-showcase-wrapper" style="margin-top: 100px;">
-                    <div class="section-header" style="text-align: center; margin-bottom: 40px;">
-                        <span class="en-title" style="font-size: 0.9rem; letter-spacing: 0.2em; color: #3399ff;">ACTUAL EXAMPLES</span>
-                        <h3 style="font-size: 1.8rem; margin-top: 10px;">Production Demos</h3>
-                    </div>
-
-                    <div class="demo-grid">
-                        
-                        <div class="demo-monitor">
-                            <div class="monitor-frame">
-                                <video src="demo1.mp4" autoplay muted loop playsinline></video>
-                                <div class="monitor-overlay"></div> </div>
-                            <div class="monitor-info">
-                                <h4>Case Study 01</h4>
-                                <p>AI Model Generation</p>
-                            </div>
-                        </div>
-
-                        <div class="demo-monitor">
-                            <div class="monitor-frame">
-                                <video src="demo2.mp4" autoplay muted loop playsinline></video>
-                                <div class="monitor-overlay"></div>
-                            </div>
-                            <div class="monitor-info">
-                                <h4>Case Study 02</h4>
-                                <p>3D Motion & VFX</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="section-padding bg-dark fade-in-section" id="technology">
-            <div class="container">
-                <div class="section-header" style="text-align: center; margin-bottom: 60px;">
-                    <span class="en-title">TECHNOLOGY</span>
-                    <h3>The Edge of Generative AI</h3>
-                    <p style="color:#ccc; margin-top:10px;">単なる生成ではなく、「制御」されたクリエイティブへ。</p>
-                </div>
-
                 <div class="tech-detail">
-                    <div class="tech-desc">
-                        <h4>01. Character Consistency</h4>
-                        <p class="tech-sub">キャラクター一貫性維持技術</p>
-                        <p>
-                            生成AIの最大の弱点である「カットごとの顔ブレ」を解消しました。<br>
-                            マスタープロンプトと自己回帰的LoRA技術を組み合わせることで、
-                            長尺のストーリー動画でも同一人物として認識される一貫したキャラクター生成を実現しています。
-                        </p>
-                    </div>
                     <div class="tech-img-placeholder">
-                        <img src="images/character.jpg" alt="Character Consistency Technology">
+                        <span>Character Consistency<br>(LoRA)</span>
+                    </div>
+                    <div class="tech-desc">
+                        <h4>キャラクター一貫性維持技術</h4>
+                        <p>生成AIの最大の弱点である「カットごとの顔ブレ」を解消しました。マスタープロンプトと自己回帰的LoRA技術を組み合わせることで、長尺のストーリー動画でも同一人物として認識されるキャラクター生成を実現しています。</p>
                     </div>
                 </div>
 
                 <div class="tech-detail reverse">
-                    <div class="tech-desc">
-                        <h4>02. Layout Control (GLIGEN)</h4>
-                        <p class="tech-sub">GLIGEN拡張による構図制御</p>
-                        <p>
-                            プロンプトだけでは制御しきれない「被写体の配置」を、GLIGEN技術によって完全にコントロールします。<br>
-                            画面上の任意の領域を指定し、そこに特定の要素を生成させることで、
-                            「偶発的なクリエイティブ」と「意図通りの構図」を共存させます。
-                        </p>
-                    </div>
                     <div class="tech-img-placeholder">
-                        <img src="images/gligen.jpg" alt="GLIGEN Layout Control">
+                        <span>Composition Control<br>(GLIGEN)</span>
+                    </div>
+                    <div class="tech-desc">
+                        <h4>GLIGEN拡張による構図制御</h4>
+                        <p>「偶然良い絵ができる」のを待つのではなく、狙った構図をAIに指定する技術です。商品を持つ手の位置、背景の配置などをピクセル単位でコントロールし、ビジネスユースに耐えうる正確な描写を可能にしました。</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <section class="section-padding bg-dark fade-in-section">
+            <div class="container">
+                <h3 class="page-sub-title">CASE STUDY</h3>
+                <p style="margin-bottom:30px; color:#555;">業界を問わず、様々なビジネスシーンで導入が進んでいます。</p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <div class="visual-placeholder" style="height:150px; margin-bottom:15px; background:#eee;">
+                            <span style="color:#555; font-size:1rem;">Image</span>
+                        </div>
+                        <h4>美容クリニック様 SNS広告</h4>
+                        <p>AIモデルを活用し、撮影コストを0に削減。CPAを40%改善しました。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="visual-placeholder" style="height:150px; margin-bottom:15px; background:#eee;">
+                             <span style="color:#555; font-size:1rem;">Image</span>
+                        </div>
+                        <h4>SaaS企業様 サービス紹介</h4>
+                        <p>複雑な機能説明をAIナレーションとモーショングラフィックスで可視化。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="visual-placeholder" style="height:150px; margin-bottom:15px; background:#eee;">
+                             <span style="color:#555; font-size:1rem;">Image</span>
+                        </div>
+                        <h4>不動産会社様 物件紹介</h4>
+                        <p>静止画素材から内見動画を自動生成し、営業効率を大幅向上。</p>
+                    </div>
+                </div>
             </div>
         </section>
         
         <section class="section-padding fade-in-section" style="text-align:center;">
             <div class="container">
-                <h3 style="color:#fff; margin-bottom: 30px;">ビジネスを加速させる動画を、今すぐ。</h3>
-                <a href="contact.html" class="primary-btn">お問い合わせはこちら</a>
+                <h3 style="color:#1a1a1a;">ビジネスを加速させる動画を、今すぐ。</h3>
+                <a href="contact.html" class="primary-btn" style="margin-top:30px;">お問い合わせはこちら</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container"><p>&copy; 2025 poralized Inc.</p></div>
+        <div class="footer-inner"><p class="copyright">&copy; 2025 poralized Inc.</p></div>
     </footer>
-</body>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
