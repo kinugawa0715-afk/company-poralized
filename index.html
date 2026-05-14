@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>株式会社poralized | AI動画制作・デジタルマーケティング</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://unpkg.com/three@0.128.0/examples/js/geometry/TextGeometry.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1><a href="#hero" class="scroll-link">poralized<span class="dot">.</span></a></h1>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#hero" class="scroll-link">HOME</a></li>
+                    <li><a href="#vision" class="scroll-link">PHILOSOPHY</a></li>
+                    <li><a href="#service" class="scroll-link">SERVICE</a></li>
+                    <li><a href="#company" class="scroll-link">COMPANY</a></li>
+                    <li><a href="#contact" class="contact-btn scroll-link">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="hero">
+            <canvas id="webgl-canvas"></canvas>
+            <div class="hero-content">
+                <span class="hero-sub fade-up">CREATE THE FUTURE</span>
+                <h2 class="hero-title fade-up">AI Driven<br>Polarization</h2>
+                <p class="hero-lead fade-up">
+                    AI技術とデータドリブンな戦略で、動画制作の常識を覆す。<br>
+                    ビジネスに突き抜けた成果を。
+                </p>
+                <div class="hero-cta fade-up">
+                    <a href="#contact" class="btn-ai-primary scroll-link">CONTACT US</a>
+                </div>
+            </div>
+            <div class="scroll-down"><span>SCROLL</span><div class="line"></div></div>
+        </section>
+
+        <!-- SERVICE (SOLUTION) SECTION -->
+        <section id="service" class="section-padding fade-in-section">
+            <div class="container">
+                <div class="section-header ai-header" style="align-items: center; text-align: center;">
+                    <span class="en-title">OUR SOLUTION</span>
+                    <h3>AIによる格安ミュージックビデオ制作</h3>
+                </div>
+
+                <!-- 課題セクション -->
+                <div class="issues-container fade-in-section">
+                    <h4 class="issues-title">MV制作において、こんな課題はありませんか？</h4>
+                    <ul class="issues-list">
+                        <li>「楽曲の世界観を映像化したいが、予算が数百万単位で足りない」</li>
+                        <li>「ロケ地の確保やエキストラ、機材の手配に膨大なコストがかかる」</li>
+                        <li>「制作期間が数ヶ月かかり、リリース日に間に合わせるのが難しい」</li>
+                    </ul>
+                </div>
+
+                <div class="section-header ai-header" style="align-items: center; text-align: center; margin-top: 80px;">
+                    <span class="en-title">WHAT WE DO</span>
+                    <h3>撮影コスト「ゼロ」。圧倒的クオリティと低価格の両立</h3>
+                </div>
+
+                <div class="ai-service-grid">
+                    <div class="ai-service-card">
+                        <div class="ai-service-img">
+                            <video src="media/4wh3XJXIpV3JCeR4tcbZ752HWVscN0YyFDbR_Orn6Nk.mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                        </div>
+                        <div class="ai-service-text">
+                            <h4>Generative AI Music Video</h4>
+                            <p>最新の生成AIを駆使し、実写に迫る高精細な映像からアニメーションまで、あらゆる世界観を「撮影なし」で構築します。スタジオ代、俳優費、機材費などの物理コストを完全に排除することで、従来の常識を覆す格安でのMV制作を実現します。</p>
+                        </div>
+                    </div>
+                    <div class="ai-service-card reverse">
+                        <div class="ai-service-img">
+                            <video src="media/202509290111%20(1).mp4" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+                        </div>
+                        <div class="ai-service-text">
+                            <h4>Speed & Quality Control</h4>
+                            <p>プロンプト（指示文）から映像をダイレクトに生成するため、制作期間も大幅に短縮。イメージのすり合わせから納品までを高速で行いながらも、AI特有の「破綻」を高度な技術で制御し、プロフェッショナルな品質を担保します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS SECTION (Moved) -->
+        <section id="news" class="section-padding bg-gray fade-in-section">
+            <div class="container narrow">
+                <div class="section-header ai-header">
+                    <span class="en-title">NEWS</span>
+                    <h3>お知らせ</h3>
+                </div>
+                <ul class="news-list">
+                    <li>
+                        <a href="#">
+                            <div class="news-meta">
+                                <time>2026.05.15</time>
+                                <span class="category press">PRESS</span>
+                            </div>
+                            <p class="news-title">新しいAI動画生成プラットフォームのベータ版提供を開始しました。</p>
+                            <span class="news-arrow">→</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="news-meta">
+                                <time>2026.04.10</time>
+                                <span class="category info">INFO</span>
+                            </div>
+                            <p class="news-title">本社オフィスを移転いたしました。</p>
+                            <span class="news-arrow">→</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="news-meta">
+                                <time>2026.03.01</time>
+                                <span class="category media">MEDIA</span>
+                            </div>
+                            <p class="news-title">テックメディア「Web Design Trends」にて弊社の取り組みが紹介されました。</p>
+                            <span class="news-arrow">→</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PHILOSOPHY / VISION SECTION (Moved) -->
+        <section id="vision" class="section-padding fade-in-section">
+            <div class="container">
+                <div class="vision-content">
+                    <span class="en-title">PHILOSOPHY</span>
+                    <h3 class="vision-catchphrase">成果か、無か。</h3>
+                    <p class="vision-desc">
+                        デジタルとAIの世界において、中途半端な結果に価値はありません。<br>
+                        0か1か。機能するか、しないか。<br><br>
+                        私たちは「平均点」を良しとせず、常に突き抜けた成果（Outlier）を追求します。<br>
+                        リスクを恐れず技術革新に挑み続けることで、お客様のビジネスに不可逆的な成長をもたらすこと。<br>
+                        それが、株式会社poralizedの提供する「両極化（Polarization）」の真意です。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section-padding bg-gray fade-in-section">
+            <div class="container narrow">
+                <div class="section-header ai-header" style="align-items: center; text-align: center;">
+                    <span class="en-title">CONTACT</span>
+                    <h3>お問い合わせ</h3>
+                </div>
+                <div class="form-wrapper">
+                    <p style="color:#555; margin-bottom: 20px;">
+                        MV制作のお見積り、AI技術に関するご相談など、お気軽にお問い合わせください。<br>
+                        通常3営業日以内に担当者よりご連絡いたします。
+                    </p>
+                    <a href="mailto:info@poralized.co.jp" class="email-link">info@poralized.co.jp</a>
+                    <p class="note" style="font-size:0.85rem; color:#888;">※ 営業メール等はご遠慮ください。</p>
+                    
+                    <div class="btn-center">
+                        <a href="#" class="btn-ai-primary">SEND MESSAGE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPANY SECTION (Moved) -->
+        <section id="company" class="section-padding fade-in-section">
+            <div class="container narrow">
+                <div class="section-header ai-header">
+                    <span class="en-title">COMPANY</span>
+                    <h3>会社概要</h3>
+                </div>
+                <div class="ceo-message">
+                    <div class="ceo-img">
+                        <div class="visual-placeholder">
+                            <img src="media/daihyou%20(1).jpg" alt="代表 絹川 史也">
+                        </div>
+                    </div>
+                    <div class="ceo-text">
+                        <h4>境界を溶かす。</h4>
+                        <p>既存の枠組みを超え、AI技術によって突き抜けた成果（Polarized）へアクセスするための入り口（Portal）となる。<br>社名に込めたこの決意こそが、私たちの原動力です。</p>
+                        <p style="text-align: right; margin-top: 20px; font-weight: 700;">代表 絹川 史也</p>
+                    </div>
+                </div>
+
+                <dl class="company-dl">
+                    <div class="row">
+                        <dt>社名</dt>
+                        <dd>株式会社poralized</dd>
+                    </div>
+                    <div class="row">
+                        <dt>設立</dt>
+                        <dd>2025年9月2日</dd>
+                    </div>
+                    <div class="row">
+                        <dt>代表</dt>
+                        <dd>絹川 史也</dd>
+                    </div>
+                    <div class="row">
+                        <dt>事業</dt>
+                        <dd>AI動画生成 / マーケティング / システム開発</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">poralized<span>.</span></div>
+                <ul class="footer-links">
+                    <li><a href="#vision" class="scroll-link">PHILOSOPHY</a></li>
+                    <li><a href="#service" class="scroll-link">SERVICE</a></li>
+                    <li><a href="#company" class="scroll-link">COMPANY</a></li>
+                    <li><a href="#contact" class="scroll-link">CONTACT</a></li>
+                </ul>
+            </div>
+            <p class="copyright">&copy; 2026 poralized Inc.</p>
+        </div>
+    </footer>
+</body>
+</html>

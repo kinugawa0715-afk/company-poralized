@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事業内容 | 株式会社poralized</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1><a href="index.html">poralized<span class="dot">.</span></a></h1> 
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">TOP</a></li>
+                    <li><a href="philosophy.html">PHILOSOPHY</a></li>
+                    <li><a href="service.html" class="active">SERVICE</a></li>
+                    <li><a href="company.html">COMPANY</a></li>
+                    <li><a href="contact.html" class="contact-btn">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="parallax-bg-wrap">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop" alt="service-bg" class="parallax-img">
+            </div>
+            <div class="container">
+                <h2>SERVICE & TECHNOLOGY</h2>
+                <p>事業内容と独自技術</p>
+            </div>
+        </section>
+
+        <div class="breadcrumbs">
+            <div class="container"><a href="index.html">TOP</a> &gt; <span>SERVICE</span></div>
+        </div>
+
+        <section class="section-padding fade-in-section">
+            <div class="container">
+                <h3 class="page-sub-title">Our Technology</h3>
+                
+                <div class="tech-detail">
+                    <div class="tech-img-placeholder">
+                        <span>Character Consistency<br>(LoRA)</span>
+                    </div>
+                    <div class="tech-desc">
+                        <h4>キャラクター一貫性維持技術</h4>
+                        <p>生成AIの最大の弱点である「カットごとの顔ブレ」を解消しました。マスタープロンプトと自己回帰的LoRA技術を組み合わせることで、長尺のストーリー動画でも同一人物として認識されるキャラクター生成を実現しています。</p>
+                    </div>
+                </div>
+
+                <div class="tech-detail reverse">
+                    <div class="tech-img-placeholder">
+                        <span>Composition Control<br>(GLIGEN)</span>
+                    </div>
+                    <div class="tech-desc">
+                        <h4>GLIGEN拡張による構図制御</h4>
+                        <p>「偶然良い絵ができる」のを待つのではなく、狙った構図をAIに指定する技術です。商品を持つ手の位置、背景の配置などをピクセル単位でコントロールし、ビジネスユースに耐えうる正確な描写を可能にしました。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-dark fade-in-section">
+            <div class="container">
+                <h3 class="page-sub-title">CASE STUDY</h3>
+                <p style="margin-bottom:30px; color:#555;">業界を問わず、様々なビジネスシーンで導入が進んでいます。</p>
+                
+                <div class="service-features">
+                    <div class="feature-item">
+                        <div class="visual-placeholder" style="height:150px; margin-bottom:15px; background:#eee;">
+                            <span style="color:#555; font-size:1rem;">Image</span>
+                        </div>
+                        <h4>美容クリニック様 SNS広告</h4>
+                        <p>AIモデルを活用し、撮影コストを0に削減。CPAを40%改善しました。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="visual-placeholder" style="height:150px; margin-bottom:15px; background:#eee;">
+                             <span style="color:#555; font-size:1rem;">Image</span>
+                        </div>
+                        <h4>SaaS企業様 サービス紹介</h4>
+                        <p>複雑な機能説明をAIナレーションとモーショングラフィックスで可視化。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="visual-placeholder" style="height:150px; margin-bottom:15px; background:#eee;">
+                             <span style="color:#555; font-size:1rem;">Image</span>
+                        </div>
+                        <h4>不動産会社様 物件紹介</h4>
+                        <p>静止画素材から内見動画を自動生成し、営業効率を大幅向上。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-padding fade-in-section" style="text-align:center;">
+            <div class="container">
+                <h3 style="color:#1a1a1a;">ビジネスを加速させる動画を、今すぐ。</h3>
+                <a href="contact.html" class="primary-btn" style="margin-top:30px;">お問い合わせはこちら</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner"><p class="copyright">&copy; 2025 poralized Inc.</p></div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
